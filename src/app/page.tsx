@@ -11,7 +11,6 @@ export default function Home() {
 		endpoints.MATCHES,
 		fetchMatches
 	)
-
 	const matches = Array.isArray(data) ? data : []
 	return (
 		<div className='px-4 py-8 sm:p-10.5'>
