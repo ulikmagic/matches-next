@@ -7,12 +7,12 @@ import { endpoints, fetchMatches } from '@/utils/api'
 import useSWR from 'swr'
 
 export default function Home() {
-	const {
-		data = [],
-		isValidating,
-		error,
-		mutate,
-	} = useSWR(endpoints.MATCHES, fetchMatches)
+	const { data, isValidating, error, mutate } = useSWR(
+		endpoints.MATCHES,
+		fetchMatches
+	)
+
+	const matches = Array.isArray(data) ? data : []
 	return (
 		<div className='px-4 py-8 sm:p-10.5'>
 			<Header
@@ -23,11 +23,11 @@ export default function Home() {
 			/>
 			<List
 				emptyTitle='Ничего не найдено!'
-				isEmpty={error || data.length === 0}
+				isEmpty={matches.length === 0}
 				isLoading={isValidating}
 			>
-				{data.map((item, idx) => (
-					<Card key={`${item.title[0]}-${idx}`} {...item} />
+				{matches.map(item => (
+					<Card key={item.title} {...item} />
 				))}
 			</List>
 		</div>

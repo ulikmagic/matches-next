@@ -5,7 +5,7 @@ const instance = axios.create({
 });
 
 export const endpoints = {
-  MATCHES: "/fronttemp",
+  MATCHES: "/fronttemps",
 };
 
 export const fetchMatches = () => instance.get<MatchesResponse>(endpoints.MATCHES).then(({ data: res }) => res.data.matches)

@@ -1,26 +1,26 @@
 type Status = "Scheduled" | "Ongoing" | "Finished";
 
 interface Player {
-  username: string[];
-  kills: number[];
+  username: string;
+  kills: number;
 }
 
 interface Team {
-  name: string[];
+  name: string;
   players: Players[];
-  points: number[];
-  place: number[];
-  total_kills: number[];
+  points: number;
+  place: number;
+  total_kills: number;
 }
 
 interface Match {
-  time: Date[];
-  title: string[];
+  time: Date;
+  title: string;
   homeTeam: Team;
   awayTeam: Team;
-  homeScore: number[];
-  awayScore: number[];
-  status: Status[];
+  homeScore: number;
+  awayScore: number;
+  status: Status;
 }
 
 interface MatchesResponse {
