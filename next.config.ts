@@ -3,12 +3,8 @@ import type { Configuration, RuleSetRule } from "webpack";
 
 const nextConfig: NextConfig = {
   webpack(config: Configuration) {
-    if (!config.module) {
-      config.module = {};
-    }
-    if (!config.module.rules) {
-      config.module.rules = [];
-    }
+    if (!config.module) config.module = {};
+    if (!config.module.rules) config.module.rules = [];
 
     const fileLoaderRule = config.module.rules.find(
       (rule): rule is RuleSetRule =>
@@ -18,7 +14,6 @@ const nextConfig: NextConfig = {
         rule.test instanceof RegExp &&
         rule.test.test(".svg")
     );
-
     if (fileLoaderRule) {
       fileLoaderRule.exclude = /\.svg$/;
     }
@@ -28,7 +23,7 @@ const nextConfig: NextConfig = {
       oneOf: [
         {
           resourceQuery: /raw/,
-          use: "raw-loader",
+          type: "asset/resource",
         },
         {
           use: ["@svgr/webpack"],
