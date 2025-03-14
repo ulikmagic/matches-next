@@ -11,6 +11,7 @@ export default function Home() {
 			<ButtonUpdate isLoading />
 			<Status variant='live' />
 			<Select
+				isDisabled
 				options={[
 					{ label: '12323', value: '123213' },
 					{ label: 'how', value: 'how' },
