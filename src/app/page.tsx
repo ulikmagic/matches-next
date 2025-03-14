@@ -1,4 +1,7 @@
+'use client'
+
 import ButtonUpdate from '@/components/UI/ButtonUpdate/ButtonUpdate'
+import { Select } from '@/components/UI/Select/Select'
 import { Status } from '@/components/UI/Status/Status'
 
 export default function Home() {
@@ -6,6 +9,12 @@ export default function Home() {
 		<div className='p-10'>
 			<ButtonUpdate isLoading />
 			<Status variant='live' />
+			<Select
+				options={[
+					{ label: '12323', value: '123213' },
+					{ label: 'how', value: 'how' },
+				]}
+			/>
 		</div>
 	)
 }
