@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import type { TeamInfoProps } from '../types'
 
 import clsx from 'clsx'
-import Image from 'next/image'
+import { Picture } from '@/components/UI/Picture/Picture'
 
 export const TeamInfo: FC<TeamInfoProps> = ({ title, logo, reverse }) => (
 	<div
@@ -11,15 +11,13 @@ export const TeamInfo: FC<TeamInfoProps> = ({ title, logo, reverse }) => (
 			reverse && 'flex-row-reverse'
 		)}
 	>
-		{logo && (
-			<Image
-				src={logo}
-				height={40}
-				width={40}
-				className='w-7 h-7 sm:w-12 sm:h-12'
-				alt='logo-team'
-			/>
-		)}
+		<Picture
+			src={logo}
+			height={40}
+			width={40}
+			className='w-7 h-7 sm:w-12 sm:h-12'
+			alt='logo-team'
+		/>
 		<p className='text-white font-semibold text-sm sm:text-base whitespace-nowrap'>
 			{title}
 		</p>
