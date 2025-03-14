@@ -19,6 +19,13 @@
   --color-label: #fafafa66;
   --color-white: #ffffff;
   --font-inter: "Inter", "sans-serif";
+  --animate-card-skeleton: card-skeleton 1s ease-in-out infinite;
+
+  @keyframes card-skeleton {
+    50% {
+      background: var(--color-black-300);
+    }
+  }
 }
 @layer base {
   body {

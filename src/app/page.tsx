@@ -1,6 +1,7 @@
 'use client'
 
 import { Card } from '@/components/Card/Card'
+import { Skeleton } from '@/components/Card/components/Skeleton'
 import ButtonUpdate from '@/components/UI/ButtonUpdate/ButtonUpdate'
 import { Select } from '@/components/UI/Select/Select'
 import { Status } from '@/components/UI/Status/Status'
@@ -18,6 +19,7 @@ export default function Home() {
 				]}
 			/>
 			<Card />
+			<Skeleton />
 		</div>
 	)
 }
