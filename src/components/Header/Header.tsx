@@ -3,9 +3,9 @@ import type { HeaderProps } from './types'
 
 import clsx from 'clsx'
 import LogoImage from '@/assets/logo.png'
-import Image from 'next/image'
 import ButtonUpdate from '@/components/UI/ButtonUpdate/ButtonUpdate'
 import { ErrorBox } from '@/components/UI/ErrorBox/ErrorBox'
+import { Picture } from '@/components/UI/Picture/Picture'
 
 export const Header: FC<HeaderProps> = ({
 	className,
@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({
 			)}
 		>
 			<div className='flex flex-col w-full gap-3.5 xl:gap-6 xl:flex-row items-center'>
-				<Image
+				<Picture
 					src={LogoImage}
 					width={225}
 					height={28}
