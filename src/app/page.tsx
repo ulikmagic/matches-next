@@ -1,25 +1,11 @@
 'use client'
 
-import { Card } from '@/components/Card/Card'
-import { Skeleton } from '@/components/Card/components/Skeleton'
-import ButtonUpdate from '@/components/UI/ButtonUpdate/ButtonUpdate'
-import { Select } from '@/components/UI/Select/Select'
-import { Status } from '@/components/UI/Status/Status'
+import { Header } from '@/components/Header/Header'
 
 export default function Home() {
 	return (
-		<div className='p-4'>
-			<ButtonUpdate isLoading />
-			<Status variant='live' />
-			<Select
-				isDisabled
-				options={[
-					{ label: '12323', value: '123213' },
-					{ label: 'how', value: 'how' },
-				]}
-			/>
-			<Card />
-			<Skeleton />
+		<div className='px-4 py-8 sm:p-10.5'>
+			<Header className='mb-8 sm:mb-5' />
 		</div>
 	)
 }

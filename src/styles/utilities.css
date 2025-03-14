@@ -10,3 +10,6 @@
 @utility min-h-card {
   min-height: 87px;
 }
+@utility p-10.5 {
+  padding: 42px;
+}
