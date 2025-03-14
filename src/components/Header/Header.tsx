@@ -1,15 +1,18 @@
 import type { FC } from 'react'
+import type { HeaderProps } from './types'
 
 import clsx from 'clsx'
-import { useState } from 'react'
 import LogoImage from '@/assets/logo.png'
 import Image from 'next/image'
-import { Select } from '@/components/UI/Select/Select'
 import ButtonUpdate from '@/components/UI/ButtonUpdate/ButtonUpdate'
 import { ErrorBox } from '@/components/UI/ErrorBox/ErrorBox'
 
-export const Header: FC<{ className?: string }> = ({ className }) => {
-	const [isError, setIsError] = useState(true)
+export const Header: FC<HeaderProps> = ({
+	className,
+	onUpdate,
+	isError,
+	isLoading,
+}) => {
 	return (
 		<header
 			className={clsx(
@@ -25,16 +28,18 @@ export const Header: FC<{ className?: string }> = ({ className }) => {
 					className='w-56 h-6	xl:w-64 xl:h-7'
 					alt='logo'
 				/>
-				<Select className='w-full xl:w-auto' placeholder='Все статусы' />
+				{/* на будущее */}
+				{/* <Select placeholder="Все статусы" /> */}
 			</div>
 			<div className='w-full flex flex-col gap-3 xl:flex-row-reverse xl:w-auto'>
 				<ButtonUpdate
 					className='!w-full xl:!w-[204px]'
-					onClick={() => setIsError(!isError)}
+					isLoading={isLoading}
+					onClick={onUpdate}
 				/>
 				<ErrorBox
 					title='Ошибка: не удалось загрузить информацию'
-					isOpen={isError}
+					isOpen={Boolean(isError)}
 				/>
 			</div>
 		</header>

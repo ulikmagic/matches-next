@@ -1,8 +1,10 @@
+import type { FC } from 'react'
+
 import { Status } from '@/components/UI/Status/Status'
 import { TeamInfo } from './components/TeamInfo'
 import TeamLogoImage from '@/assets/icons/team-logo.svg?raw'
 
-export const Card = () => {
+export const Card: FC<Match> = () => {
 	return (
 		<div className='bg-black-100 rounded-sm min-h-card p-2 sm:p-4 w-full flex items-center justify-between'>
 			<TeamInfo title='Command №1' logo={TeamLogoImage} />

@@ -15,17 +15,17 @@ export const List: FC<ListProps> = ({
 	isLoader,
 	isLoading,
 }) => {
-	return isEmpty ? (
-		<div className='h-80 flex items-center justify-center font-semibold'>
-			<p className='text-xl lg:text-4xl text-grey'>{emptyTitle}</p>
-		</div>
-	) : isLoading ? (
+	return isLoading ? (
 		<div className='flex flex-col gap-3 min-h-80 items-center justify-center'>
 			{isLoader ? (
 				<RefreshIcon className='w-15 h-15 animate-spin' />
 			) : (
 				skeletons.map(item => <Skeleton key={item} />)
 			)}
+		</div>
+	) : isEmpty ? (
+		<div className='h-80 flex items-center justify-center font-semibold'>
+			<p className='text-xl lg:text-4xl text-grey'>{emptyTitle}</p>
 		</div>
 	) : (
 		<div className='flex flex-col gap-2 lg:gap-3'>{children}</div>
