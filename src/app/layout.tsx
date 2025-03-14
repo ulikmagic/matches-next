@@ -1,9 +1,11 @@
-import { Geist } from 'next/font/google'
-import './globals.css'
+import { Inter } from 'next/font/google'
+import '@/styles/globals.css'
+import clsx from 'clsx'
 
-const geistSans = Geist({
-	variable: '--font-geist-sans',
+const inter = Inter({
+	variable: '--font-inter',
 	subsets: ['latin'],
+	weight: ['400', '500'],
 })
 
 export default function RootLayout({
@@ -13,7 +15,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={`${geistSans.variable}`}>{children}</body>
+			<body className={clsx(inter.variable, 'w-full h-screen bg-black p-4')}>
+				{children}
+			</body>
 		</html>
 	)
 }
