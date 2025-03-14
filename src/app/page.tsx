@@ -1,7 +1,9 @@
+import ButtonUpdate from '@/components/UI/ButtonUpdate'
+
 export default function Home() {
 	return (
-		<div className='text-4xl'>
-			<p>sd</p>
+		<div className='p-10'>
+			<ButtonUpdate isLoading />
 		</div>
 	)
 }

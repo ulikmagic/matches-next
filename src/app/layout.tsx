@@ -5,7 +5,7 @@ import clsx from 'clsx'
 const inter = Inter({
 	variable: '--font-inter',
 	subsets: ['latin'],
-	weight: ['400', '500'],
+	weight: ['500', '600'],
 })
 
 export default function RootLayout({
