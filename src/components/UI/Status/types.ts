@@ -1,8 +1,3 @@
-export type StatusVariant = "live" | "finished" | "preparing";
-
-export type Variants = {
-  [key in StatusVariant]: {
-    text: string;
-    className: string;
-  };
+export type StatusClasses = {
+  [key in Status]: string;
 };

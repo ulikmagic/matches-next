@@ -10,7 +10,7 @@ export const Card: FC<Match> = () => {
 			<TeamInfo title='Command №1' logo={TeamLogoImage} />
 			<div className='flex flex-col items-center gap-1'>
 				<p className='font-semibold text-sm sm:text-xl text-white'>2 : 1</p>
-				<Status variant='live' />
+				<Status variant='Ongoing' />
 			</div>
 			<TeamInfo reverse title='Command №2' logo={TeamLogoImage} />
 		</div>
