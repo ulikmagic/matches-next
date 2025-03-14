@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<body className={clsx(inter.variable, 'w-full h-screen bg-black p-4')}>
+			<body className={clsx(inter.variable, 'w-full h-screen bg-black')}>
 				{children}
 			</body>
 		</html>
